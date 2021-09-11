@@ -19,7 +19,7 @@ ll MOD = 1000000009;
 int n,k;
 matrix q;
 
-void print(matrix M) {
+void print(const matrix& M) {
     for(int i=0;i<k;i++){
         for(int j=0;j<k;j++){
             cout << M[i][j] << " ";
@@ -29,7 +29,7 @@ void print(matrix M) {
     cout << endl;
 }
 
-matrix matrixProduct(matrix A, matrix B) {
+matrix matrixProduct(const matrix& A, const matrix& B) {
     matrix C;
     for(int i=0; i<k; i++){
         C.push_back(vector<ll>(k));
@@ -46,7 +46,7 @@ matrix matrixProduct(matrix A, matrix B) {
     return C;
 }
 
-matrix matrixPower(matrix M, int power) {
+matrix matrixPower(const matrix& M, int power) {
     matrix result;
     for(int i=0;i<k;i++){
         result.push_back(vector<ll>(k,0));
@@ -92,6 +92,5 @@ int main()
     
     auto answer = matrixPower(q, n);
     cout << answer[0][0] << endl;
-    
-    
+    return 0;
 }
